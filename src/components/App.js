@@ -1,26 +1,26 @@
-
-import React, { Component } from "react";
+import React, {Component, useState} from "react";
 import '../styles/App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = ({slides}) => {
 
-    this.state = {
-      slides: props.slides,
-      index: 0,
-    };
-  }
+  const [index,setIndex]=useState(0);
 
-  render() {
-    
-    const { index, slides } = this.state;
-
-    return (
-      <></>
-    );
-  }
+  
+  return (
+        <div>
+         <div id='slide'>
+           <h1 data-testid="title">{index} : {slides[index].title}</h1>
+           <p data-testid="text">{slides[index].text}</p>
+         </div>
+         <div id='navigation'>
+            <button disabled={index===0} onClick={()=>setIndex(index-1)}>Prev</button>
+            <button disabled={index===slides.length-1} onClick={()=>setIndex(index+1)}>Next</button>
+            <button disabled={index===0} onClick={()=>setIndex(0)}>Restart</button>
+         </div>
+        </div>
+      )
 }
 
-export default App;
 
+
+export default App;
