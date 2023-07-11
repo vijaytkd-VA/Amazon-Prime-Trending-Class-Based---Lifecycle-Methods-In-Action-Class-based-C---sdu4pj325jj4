@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/App.css";
-import slides from "../data/slides";
+import slides from "../data/slides.js";
 
 class App extends Component {
   constructor(props) {
