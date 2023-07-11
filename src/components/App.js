@@ -12,6 +12,7 @@ class App extends Component {
     };
   }
 
+
   handleNext = () => {
     const { index, slides } = this.state;
     if (index < slides.length - 1) {
